@@ -53,7 +53,7 @@ func RenderDataAsJSONP(w http.ResponseWriter, data interface{}, callback string,
 	fmt.Fprintf(w, "%s(%s)", callback, b)
 }
 
-// Writes the given data as a json and set the status code.
+// WriteJson writes the given data as a json and set the status code.
 func WriteJson(w http.ResponseWriter, data []byte, status int) {
 	w.Header().Set("Content-Length", strconv.Itoa(len(data)))
 	w.Header().Set("Content-Type", "application/json")
